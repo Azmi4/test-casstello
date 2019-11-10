@@ -1,0 +1,58 @@
+.options {
+  display: flex;
+  @include phones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.options__item {
+  padding: 0 60px;
+  border-right: 1px solid #ececec;
+  &:last-child {
+    border-right: 1px solid transparent;
+  }
+  @include phones {
+    padding: 15px 35px 15px 37px;
+    width: 155px;
+    &:nth-child(1) {
+      border-bottom: 1px solid #ececec;
+    }
+    &:nth-child(2) {
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid #ececec;
+    }
+  }
+}
+
+.options__number {
+  font-size: 48px;
+  font-weight: 600;
+  color: #b79b6c;
+  @include phones {
+    font-size: 24px;
+  }
+}
+
+.options__number_mod {
+  position: relative;
+  &::after {
+    content: "2";
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    font-size: 27px;
+    @include phones {
+      font-size: 14px;
+      top: 0;
+      right: 2px;
+    }
+  }
+}
+
+.options__text {
+  font-size: 18px;
+  @include phones {
+    font-size: 16px;
+  }
+}

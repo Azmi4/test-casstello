@@ -1,0 +1,40 @@
+.calc {
+  font-weight: 600;
+  display: flex;
+  &__row {
+    margin-right: 50px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__row_link {
+    text-decoration: none;
+  }
+  @include tablets {
+    display: none;
+  }
+}
+
+.calc__line {
+  display: flex;
+  align-items: center;
+  &_icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    fill: #ab8b52;
+  }
+  &_text {
+    color: #ab8b52;
+    border-bottom: 1px dashed #ab8b52;
+  }
+}
+
+.calc__line:hover .calc__line_icon {
+  fill: #043044;
+}
+
+.calc__line:hover .calc__line_text {
+  color: #043044;
+  border-bottom: 1px dashed #043044;
+}

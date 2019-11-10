@@ -1,0 +1,29 @@
+.contact__link {
+  width: 52px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: -1px;
+  border: 1px solid #ab8b52;
+  border-radius: 5px 0 0 5px;
+  z-index: 35;
+  display: none;
+  @include tablets {
+    display: flex;
+  }
+}
+
+.contact__link_icon {
+  width: 17px;
+  height: 20px;
+  background: svg-load(
+      "telephone.svg",
+      fill= "#ab8b52",
+      width= "17px",
+      height= "20px"
+    )
+    no-repeat center center / cover;
+}

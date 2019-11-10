@@ -1,0 +1,80 @@
+.slider__container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  @include phones {
+    margin-bottom: 80px;
+  }
+}
+
+.slider__controls {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ab8b52;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 30;
+  &_prev {
+    left: 0;
+    @include phones {
+      bottom: -60px;
+    }
+  }
+  &_next {
+    right: 0px;
+    @include phones {
+      bottom: -60px;
+    }
+  }
+  &:hover {
+    background: #ab8b52;
+  }
+}
+
+.slider__controls:hover .slider__button {
+  background: svg-load(
+      "arrow.svg",
+      fill= "#fff",
+      width= "12px",
+      height= "18px;"
+    )
+    no-repeat center center / cover;
+}
+
+.slider__button {
+  width: 20px;
+  height: 20px;
+  background: svg-load(
+      "arrow.svg",
+      fill= "#ab8b52",
+      width= "12px",
+      height= "18px;"
+    )
+    no-repeat center center / cover;
+}
+
+.slider__button_next {
+  transform: rotate(180deg);
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0 65px;
+  @include phones {
+    padding: 0;
+  }
+}
+
+.flickity-viewport {
+  width: 100%;
+  height: 100%;
+}
+
+.slider__pic {
+  width: 100%;
+}

@@ -1,0 +1,61 @@
+.address {
+  display: flex;
+  font-style: normal;
+  font-weight: bold;
+  margin-right: 50px;
+  &__contact {
+    margin-right: 50px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__contact_link {
+    text-decoration: none;
+  }
+  &.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    flex-direction: column;
+    z-index: 32;
+    width: 50%;
+    margin-right: 0;
+    justify-content: center;
+    @include phones {
+      width: 100%;
+    }
+    .address__contact {
+      margin-left: 20px;
+      margin-bottom: 30px;
+    }
+    .address__line_text {
+      font-size: 30px;
+      @include phones {
+        font-size: 25px;
+      }
+    }
+    .address__line {
+      display: flex;
+      align-items: center;
+    }
+    .address__line_icon {
+      width: 25px;
+      height: 30px;
+    }
+  }
+  @include tablets {
+    display: none;
+  }
+}
+
+.address__line {
+  display: flex;
+  &_icon {
+    width: 15px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}

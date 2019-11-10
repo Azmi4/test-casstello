@@ -1,15 +1,137 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
+    title Castello
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        header.header__wrapper
+          a(href="#").hamburger#hamburgerButton
+            .hamburger__box
+              .hamburger__inner
+          a(href="#").contact__link#contact__btn
+            .contact__link_icon
+          .container
+            .header
+              .logo
+                a(href="#").logo__link
+                  +image('content/logo.png', 'logo__link_img')
+              .header__content
+                .header__content_top
+                  address.address
+                    .address__contact
+                      a(href="tel:88002222222").address__contact_link
+                        .address__line
+                          +icon('phone', 'address__line_icon')
+                          p.address__line_text 8 (800) 222-22-22
+                    .address__contact
+                      a(href="#").address__contact_link
+                        .address__line
+                          +icon('location', 'address__line_icon')
+                          p.address__line_text Уфа, Пушкина, д. 114/2
+                  .calc
+                    .calc__row
+                      a(href="#").calc__row_link
+                        .calc__line
+                          +icon('calc', 'calc__line_icon')
+                          p.calc__line_text Расчет стоимсти дома
+                    .calc__row
+                      a(href="#").calc__row_link
+                        .calc__line
+                          +icon('home', 'calc__line_icon')
+                          p.calc__line_text Trade-In и Ипотека
+                .header__content_botm
+                  nav.nav
+                    ul.nav__list
+                      li.nav__item
+                        a(href="#").nav__link.nav__link_mod Строительство
+                        .nav__menu
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Домов
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Домов
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Домов
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Домов
+                      li.nav__item
+                        a(href="#").nav__link.nav__link_mod Проекты
+                        .nav__menu
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Проекты
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Проекты
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Проекты
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Проекты
+                      li.nav__item
+                        a(href="#").nav__link Наши работы
+                      li.nav__item
+                        a(href="#").nav__link Земельные участки
+                      li.nav__item
+                        a(href="#").nav__link.nav__link_mod Услуги
+                        .nav__menu
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Услуги
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Услуги
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Услуги
+                          .nav__menu_item
+                            a(href="#").nav__menu_link Услуги
+                      li.nav__item
+                        a(href="#").nav__link О компании
+                      li.nav__item
+                        a(href="#").nav__link Контакты
+                    .calc__menu
+                      .calc__row
+                        a(href="#").calc__row_link
+                          .calc__line
+                            +icon('calc', 'calc__line_icon')
+                            p.calc__line_text Расчет стоимсти дома
+                      .calc__row
+                        a(href="#").calc__row_link
+                          .calc__line
+                            +icon('home', 'calc__line_icon')
+                            p.calc__line_text Trade-In и Ипотека
+        main.content
+          .container
+            .back
+              a(href="#").back__link -- Вернуться к списку проектов
+            section.project(@click="checkArrows" @touchend="checkArrows")
+              h2.project__title Коттедж «Уют» из дерева
+              .slider__container
+                .slider__controls.slider__controls_prev
+                  button.slider__button.slider__button_prev(@click="previous" :disabled='true')
+                flickity(ref="flickity" :options="flickityOptions").slider
+                  - for (var i = 0; i<4; i++)
+                    .slider__pic
+                      +image('content/slide-img.jpg', 'slider__img')
+                .slider__controls.slider__controls_next
+                  button.slider__button.slider__button_next(@click="next" :disabled='false')
+              .options
+                .options__item
+                  .options__number.options__number_mod 158 м
+                  .options__text общая площадь
+                .options__item
+                  .options__number 2
+                  .options__text этажа
+                .options__item
+                  .options__number 3
+                  .options__text комнаты
+                .options__item
+                  .options__number 1
+                  .options__text терраса
+
+
+
+
+        //- +image('content/user.jpg', 'user-pic')
+        //- +icon('link', 'link-class')
+        //- .icon-bg
